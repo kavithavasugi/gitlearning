@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		input{
+			padding: 10px;
+			margin: 10px;
+			border: 1px solid grey;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="User Name" id="userName" required><br><br>    
+    <input type="text" placeholder="Hobbies" id="hobbies" required><br><br>
+    <button onclick="saveSessionData()">Add</button>
+    <button onclick="clearSessionData()">Clear</button>
+     <button onclick="clearAllSessionData()">Clear All</button>
+     
+    <script type="text/javascript">
+    	function saveSessionData(){
+		 var name = document.getElementById('userName').value;
+		 var hobby = document.getElementById('hobbies').value;
+		  sessionStorage.setItem('name', name);
+		  sessionStorage.setItem('hobby', hobby);     
+    	}
+    	function clearSessionData(){
+		 var name = document.getElementById('userName').value;
+		 var hobby = document.getElementById('hobbies').value;
+		  sessionStorage.removeItem("name");
+		  sessionStorage.removeItem("hobby");     
+    	}
+    	function clearAllSessionData(){
+    		 sessionStorage.clear();
+    	}
+   	
+    </script>
+
+</body>
+</html>
